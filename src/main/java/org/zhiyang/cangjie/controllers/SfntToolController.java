@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(value = "/sfntTool")
 public class SfntToolController {
 
-    @RequestMapping(value = "/subsetFontFile/{fontId}_{subsetString}.{outFormat}")
+    @RequestMapping(value = "/subsetFontFile/{fontFile}/{subsetString}.{outFormat}")
     public String subsetFontFile(
             HttpServletResponse servletResponse,
-            @PathVariable String fontId,
+            @PathVariable String fontFile,
             @PathVariable String outFormat,
             @PathVariable String subsetString) {
-        return String.format("fontId:%s,outFormat:%s,subsetString:%s", fontId, outFormat, subsetString);
+        return String.format("fontFile:%s,outFormat:%s,subsetString:%s", fontFile, outFormat, subsetString);
     }
 
 }
